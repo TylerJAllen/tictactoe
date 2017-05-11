@@ -3,45 +3,66 @@ function User(name) {
   this.name = name;
 }
 
-User.prototype.pass = function() {
+User.prototype.appX = function() {
+  userOne.score = [];
+  if (score[0] === undefined) {
 
-}
+  }
+  }
+User.prototype.app0 = function() {
+  if (score[1] === undefined) {
+
+  }
+  }
 
 //UI LOGIC
 $(document).ready(function() {
 
-  $(".styleBox").click(function(){
+  var userOne = new User("testUserOne");
+  userOne.appX();
+  var userOne = new User("testUserTwo");
 
+    $("#top-Left").click(function(){
     var topLeft = $(this).val();
+    alert(topLeft);
+    $(this).toggle();
+    });
+    $("#top-Middle").click(function(){
     var topMiddle = $(this).val();
+    $("#top-Middle").hide();
+    });
+    $("#top-Right").click(function(){
     var topRight = $(this).val();
+    $("#top-Right").hide();
+    });
+    $("#midd-leLeft").click(function(){
     var middleLeft = $(this).val();
+    $("#midd-leLeft").hide();
+    });
+    $("#middle-Middle").click(function(){
     var middleMiddle = $(this).val();
+    $("#middle-Middle").hide();
+    });
+    $("#middle-Right").click(function(){
     var middleRight = $(this).val();
+    $("#middle-Right").hide();
+    });
+    $("#bottom-Left").click(function(){
     var bottomLeft = $(this).val();
+    $("#bottom-Left").hide();
+    });
+    $("#bottom-Middle").click(function(){
     var bottomMiddle = $(this).val();
+    $("#bottom-Middle").hide();
+    });
+    $("#bottom-Right").click(function(){
     var bottomRight = $(this).val();
+    $("#bottom-Right").toggle();
+    });
 
-    $(".styleBox").append("X");
-    $(".styleBox").toggle();
-    $(".initiallyHidden").toggle();
 
-  });
-  $(".initiallyHidden").click(function(){
 
-    var topLeft = $(this).val();
-    var topMiddle = $(this).val();
-    var topRight = $(this).val();
-    var middleLeft = $(this).val();
-    var middleMiddle = $(this).val();
-    var middleRight = $(this).val();
-    var bottomLeft = $(this).val();
-    var bottomMiddle = $(this).val();
-    var bottomRight = $(this).val();
 
-    $(".initiallyHidden").append("O");
-    $(".styleBox").toggle();
-    $(".initiallyHidden").toggle();
 
-  });
+
 });

@@ -1,13 +1,16 @@
 
+.styleBoxNone {
+  border: none;
+  background: transparent;
+  width: 300px;
+  height: 300px;
+}
 .styleBox {
   width: 300px;
   height: 300px;
   border: 1px solid black;
 }
 
-.blank {
-  background: none;
-}
 
 .X {
   background-image: url("../images/X.png");
@@ -15,11 +18,4 @@
 
 .O {
   background-image: url("../images/O.png");
-}
-
-.initiallyHidden {
-  display: none;
-  width: 300px;
-  height: 300px;
-  border: 1px solid black;
 }
