@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="fonts/Coalition_v2.ttf" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.2.1.js"></script>
@@ -10,39 +11,47 @@
     <title></title>
   </head>
   <body>
+    <div class="fullscreen-bg">
+      <video autoplay loop preload="auto">
+        <source src="http://compass.xbox.com/assets/1d/30/1d30e54d-2bd7-418a-83aa-6eb51aea499d.mp4?n=DELTA_CLE_ANIMATION.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="row">
+      <h1>TIC-TAC-TOE</h1>
+    </div>
     <div class="container">
       <div class="row">
-        <div class="col-md-4 styleBox">
-          <button class="styleBoxNone" id="top-Left" type="button" name="name" value="R1C1"></button>
+        <div id="boxOne" class="col-md-4 styleBox">
+          <button class="styleBoxNone borderLeft" id="top-Left" type="button" name="name" value="R1C1"></button>
         </div>
-        <div class="col-md-4 styleBox">
+        <div id="boxTwo" class="col-md-4 styleBox">
           <button class="styleBoxNone" id="top-Middle" type="button" name="name" value="R1C2"></button>
         </div>
-        <div class="col-md-4 styleBox">
+        <div id="boxThree" class="col-md-4 styleBox">
           <button class="styleBoxNone" id="top-Right" type="button" name="name" value="R1C3"></button>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-4 styleBox">
+        <div id="boxFour" class="borderLeft col-md-4 styleBox">
           <button class="styleBoxNone" id="middle-Left" type="button" name="name" value="R2C1"></button>
         </div>
-        <div class="col-md-4 styleBox">
+        <div id="boxFive" class="col-md-4 styleBox">
           <button class="styleBoxNone" id="middle-Middle" type="button" name="name" value="R2C2"></button>
         </div>
-        <div class="col-md-4 styleBox">
+        <div id="boxSix" class="col-md-4 styleBox">
           <button class="styleBoxNone" id="middle-Right" type="button" name="name" value="R2C3"></button>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-4 styleBox">
+        <div id="boxSeven" class="borderLeft col-md-4 styleBox">
           <button class="styleBoxNone" id="bottom-Left" type="button" name="name" value="R3C1"></button>
         </div>
-        <div class="col-md-4 styleBox">
+        <div id="boxEight" class="col-md-4 styleBox">
           <button class="styleBoxNone" id="bottom-Middle" type="button" name="name" value="R3C2"></button>
         </div>
-        <div class="col-md-4 styleBox">
+        <div id="boxNine" class="col-md-4 styleBox">
           <button class="styleBoxNone" id="bottom-Right" type="button" name="name" value="R3C3"></button>
         </div>
       </div>
