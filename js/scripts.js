@@ -1,68 +1,73 @@
 //BACK-END LOGIC
-function User(name) {
-  this.name = name;
+//player constructor
+function Player(){
+  this.captured = [];
 }
 
-// User.prototype.appX = function() {
-//   userOne.score = [];
-//   if (score[0] === undefined) {
-//
-//   }
-//   }
-// User.prototype.app0 = function() {
-//   if (score[1] === undefined) {
-//
-//   }
-//   }
+Player.prototype.checkForWinner = function(){
+  console.log(this.captured);
+  if (this.captured.includes("R1C1") === true && this.captured.includes("R1C2") === true &&   this.captured.includes("R1C3") === true) {
+    alert("ROW 1 WINNER");
+  }
+  else if (this.captured.includes("R2C1") === true && this.captured.includes("R2C2") === true       && this.captured.includes("R2C3") === true) {
+    alert("ROW 2 WINNER");
+  }
+  else if (this.captured.includes("R3C1") === true && this.captured.includes("R3C2") === true       && this.captured.includes("R3C3") === true) {
+    alert("ROW 3 WINNER");
+  }
+  else if (this.captured.includes("R1C1") === true && this.captured.includes("R2C1") === true       && this.captured.includes("R3C1") === true) {
+    alert("COLUMN 1 WINNER");
+  }
+  else if (this.captured.includes("R1C2") === true && this.captured.includes("R2C2") === true       && this.captured.includes("R3C2") === true) {
+    alert("COLUMN 2 WINNER");
+  }
+  else if (this.captured.includes("R1C3") === true && this.captured.includes("R2C3") === true       && this.captured.includes("R3C3") === true) {
+    alert("COLUMN 3 WINNER");
+  }
+  else if (this.captured.includes("R1C1") === true && this.captured.includes("R2C2") === true       && this.captured.includes("R3C3") === true) {
+    alert("DIAGONAL TOP LEFT");
+  }
+  else if (this.captured.includes("R3C1") === true && this.captured.includes("R2C2") === true       && this.captured.includes("R1C3") === true) {
+    alert("DIAGONAL BOTTOM LEFT");
+  }
+}
+
+Player.prototype.checkForDraw = function() {
+  if (this.captured.length === 9) {
+    alert("DRAW MUTHA FUCKA");
+  }
+}
 
 //UI LOGIC
 $(document).ready(function() {
 
-  var userOne = new User("testUserOne");
-  // userOne.appX();
-  var userOne = new User("testUserTwo");
+  var playerOne = new Player();
+  var playerTwo = new Player();
+  var boxesChecked = new Player();
 
-    $("#top-Left").click(function(){
-    var topLeft = $(this).val();
-    alert(topLeft);
-    $(this).toggle();
-    });
-    $("#top-Middle").click(function(){
-    var topMiddle = $(this).val();
-    $("#top-Middle").hide();
-    });
-    $("#top-Right").click(function(){
-    var topRight = $(this).val();
-    $("#top-Right").hide();
-    });
-    $("#midd-leLeft").click(function(){
-    var middleLeft = $(this).val();
-    $("#midd-leLeft").hide();
-    });
-    $("#middle-Middle").click(function(){
-    var middleMiddle = $(this).val();
-    $("#middle-Middle").hide();
-    });
-    $("#middle-Right").click(function(){
-    var middleRight = $(this).val();
-    $("#middle-Right").hide();
-    });
-    $("#bottom-Left").click(function(){
-    var bottomLeft = $(this).val();
-    $("#bottom-Left").hide();
-    });
-    $("#bottom-Middle").click(function(){
-    var bottomMiddle = $(this).val();
-    $("#bottom-Middle").hide();
-    });
-    $("#bottom-Right").click(function(){
-    var bottomRight = $(this).val();
-    $("#bottom-Right").toggle();
-    });
+  var index = 1;
 
+  $("button").on("click", function(){
 
-
-
-
-
+    if (index === 1) {
+      $(this).parent().addClass('X');
+      $(this).hide();
+      var playerOnePosition = $(this).val();
+      playerOne.captured.push(playerOnePosition);
+      boxesChecked.captured.push(playerOnePosition);
+      playerOne.checkForWinner();
+      index = 2;
+    }
+    else if (index === 2) {
+      $(this).parent().addClass('O');
+      $(this).hide();
+      var playerTwoPosition = $(this).val();
+      playerTwo.captured.push(playerTwoPosition);
+      boxesChecked.captured.push(playerTwoPosition);
+      playerTwo.checkForWinner();
+      index = 1;
+    }
+    boxesChecked.checkForDraw();
+    console.log(boxesChecked.captured);
+  });
 });

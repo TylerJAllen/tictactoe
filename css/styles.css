@@ -2,20 +2,27 @@
 .styleBoxNone {
   border: none;
   background: transparent;
-  width: 300px;
-  height: 300px;
+  width: 290px;
+  height: 290px;
+  margin: 3px;
 }
-.styleBox {
+
+div.col-md-4, .styleBox {
   width: 300px;
   height: 300px;
   border: 1px solid black;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
-
 .X {
-  background-image: url("../images/X.png");
+  background: transparent;
+  background-image: url("../images/locust.png");
+  background-size: cover;
 }
 
 .O {
-  background-image: url("../images/O.png");
+  background: transparent;
+  background-image: url("../images/cog.png");
+  background-size: cover;
 }
