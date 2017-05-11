@@ -11,6 +11,11 @@ h1 {
   font-family: 'Coalition';
   font-size: 130px;
 }
+h3 {
+  text-align: center;
+  font-family: 'Coalition';
+  color: white;
+}
 .container {
   padding-left: 150px;
   padding-right: 50px;
@@ -60,6 +65,37 @@ div.col-md-4, .styleBox {
   background-image: url("../images/cog.gif");
   background-size: cover;
 }
+.cogGif {
+  display: none;
+  background-image: url("../images/cogWin.gif");
+  width: 500px;
+  height: 280px;
+  z-index: 100;
+  border-radius: 25px;
+  margin-top: 40px;
+  padding-top: 10%;
+}
+.locustGif {
+  display: none;
+  background-image: url("../images/locustWin.gif");
+  width: 500px;
+  height: 218px;
+  z-index: 100;
+  border-radius: 25px;
+  margin-top: 40px;
+  padding-top: 10%;
+}
+#drawGif {
+  display: none;
+  background-image: url("../images/draw.gif");
+  width: 500px;
+  height: 280px;
+  z-index: 100;
+  border-radius: 25px;
+  margin-top: 40px;
+  padding-top: 10%;
+}
+
 #boxOne {
   border-top: none;
   border-left: none;
