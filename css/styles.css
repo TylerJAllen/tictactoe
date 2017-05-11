@@ -52,12 +52,12 @@ div.col-md-4, .styleBox {
 }
 .X {
   background: transparent;
-  background-image: url("../images/locust.png");
+  background-image: url("../images/locust.gif");
   background-size: cover;
 }
 .O {
   background: transparent;
-  background-image: url("../images/cog.png");
+  background-image: url("../images/cog.gif");
   background-size: cover;
 }
 #boxOne {
