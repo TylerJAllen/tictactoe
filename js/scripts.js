@@ -3,23 +3,23 @@ function User(name) {
   this.name = name;
 }
 
-User.prototype.appX = function() {
-  userOne.score = [];
-  if (score[0] === undefined) {
-
-  }
-  }
-User.prototype.app0 = function() {
-  if (score[1] === undefined) {
-
-  }
-  }
+// User.prototype.appX = function() {
+//   userOne.score = [];
+//   if (score[0] === undefined) {
+//
+//   }
+//   }
+// User.prototype.app0 = function() {
+//   if (score[1] === undefined) {
+//
+//   }
+//   }
 
 //UI LOGIC
 $(document).ready(function() {
 
   var userOne = new User("testUserOne");
-  userOne.appX();
+  // userOne.appX();
   var userOne = new User("testUserTwo");
 
     $("#top-Left").click(function(){
