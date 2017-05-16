@@ -1,44 +1,8 @@
-body {
-  background-color: #300a06;
-  color: #e91400;
-}
-@font-face {
-   font-family: 'Coalition' ;
-   src: url('../fonts/Coalition_v2.ttf') format('truetype');
-}
-h1 {
-  text-align: center;
-  font-family: 'Coalition';
-  font-size: 130px;
-}
-h3 {
-  text-align: center;
-  font-family: 'Coalition';
-  color: white;
-}
 .container {
   padding-left: 150px;
   padding-right: 50px;
 }
-.fullscreen-bg {
-    border-top: 10px solid #590600;
-    border-bottom: 10px solid #590600;
-    margin-top: 150px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    z-index: -100;
-}
-.fullscreen-bg__video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+
 .styleBoxNone {
   border: none;
   background: transparent;
@@ -57,17 +21,17 @@ div.col-md-4, .styleBox {
 }
 .X {
   background: transparent;
-  background-image: url("../images/locust.gif");
+  background-image: url("../images/good guy image");
   background-size: cover;
 }
 .O {
   background: transparent;
-  background-image: url("../images/cog.gif");
+  background-image: url("../images/bad guy image");
   background-size: cover;
 }
-.cogGif {
+.goodGuyImage {
   display: none;
-  background-image: url("../images/cogWin.gif");
+  background-image: url("../images/good guy win image");
   width: 500px;
   height: 280px;
   z-index: 100;
@@ -75,9 +39,9 @@ div.col-md-4, .styleBox {
   margin-top: 40px;
   padding-top: 10%;
 }
-.locustGif {
+.badGuyImage {
   display: none;
-  background-image: url("../images/locustWin.gif");
+  background-image: url("../images/bad guy win image");
   width: 500px;
   height: 218px;
   z-index: 100;
@@ -85,9 +49,9 @@ div.col-md-4, .styleBox {
   margin-top: 40px;
   padding-top: 10%;
 }
-#drawGif {
+#drawImage {
   display: none;
-  background-image: url("../images/draw.gif");
+  background-image: url("../images/draw image");
   width: 500px;
   height: 280px;
   z-index: 100;
