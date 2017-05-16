@@ -5,85 +5,15 @@ function Player(){
 }
 
 Player.prototype.checkForWinner = function(length,index){
-  if (this.captured.includes("R1C1") === true && this.captured.includes("R1C2") === true &&   this.captured.includes("R1C3") === true) {
-    alert("ROW 1 WINNER");
-    $("button").hide();
-    $(".container").fadeOut(4500);
-    if (index === 1) {
-      $(".locustGif").fadeIn(5100);
-    }
-    else if (index === 2) {
-      $(".cogGif").fadeIn(5100);
-    }
-  }
-  else if (this.captured.includes("R2C1") === true && this.captured.includes("R2C2") === true       && this.captured.includes("R2C3") === true) {
-    alert("ROW 2 WINNER");
-    $("button").hide();
-    $(".container").fadeOut(4500);
-    if (index === 1) {
-      $(".locustGif").fadeIn(5100);
-    }
-    else if (index === 2) {
-      $(".cogGif").fadeIn(5100);
-    }
-  }
-  else if (this.captured.includes("R3C1") === true && this.captured.includes("R3C2") === true       && this.captured.includes("R3C3") === true) {
-    alert("ROW 3 WINNER");
-    $("button").hide();
-    $(".container").fadeOut(4500);
-    if (index === 1) {
-      $(".locustGif").fadeIn(5100);
-    }
-    else if (index === 2) {
-      $(".cogGif").fadeIn(5100);
-    }
-  }
-  else if (this.captured.includes("R1C1") === true && this.captured.includes("R2C1") === true       && this.captured.includes("R3C1") === true) {
-    alert("COLUMN 1 WINNER");
-    $("button").hide();
-    $(".container").fadeOut(4500);
-    if (index === 1) {
-      $(".locustGif").fadeIn(5100);
-    }
-    else if (index === 2) {
-      $(".cogGif").fadeIn(5100);
-    }
-  }
-  else if (this.captured.includes("R1C2") === true && this.captured.includes("R2C2") === true       && this.captured.includes("R3C2") === true) {
-    alert("COLUMN 2 WINNER");
-    $("button").hide();
-    $(".container").fadeOut(4500);
-    if (index === 1) {
-      $(".locustGif").fadeIn(5100);
-    }
-    else if (index === 2) {
-      $(".cogGif").fadeIn(5100);
-    }
-  }
-  else if (this.captured.includes("R1C3") === true && this.captured.includes("R2C3") === true       && this.captured.includes("R3C3") === true) {
-    alert("COLUMN 3 WINNER");
-    $("button").hide();
-    $(".container").fadeOut(4500);
-    if (index === 1) {
-      $(".locustGif").fadeIn(5100);
-    }
-    else if (index === 2) {
-      $(".cogGif").fadeIn(5100);
-    }
-  }
-  else if (this.captured.includes("R1C1") === true && this.captured.includes("R2C2") === true       && this.captured.includes("R3C3") === true) {
-    alert("DIAGONAL TOP LEFT");
-    $("button").hide();
-    $(".container").fadeOut(4500);
-    if (index === 1) {
-      $(".locustGif").fadeIn(5100);
-    }
-    else if (index === 2) {
-      $(".cogGif").fadeIn(5100);
-    }
-  }
-  else if (this.captured.includes("R3C1") === true && this.captured.includes("R2C2") === true       && this.captured.includes("R1C3") === true) {
-    alert("DIAGONAL BOTTOM LEFT");
+  if ((this.captured.includes("R1C1") === true && this.captured.includes("R1C2") === true
+    && this.captured.includes("R1C3") === true) ||
+    (this.captured.includes("R2C1") === true && this.captured.includes("R2C2") === true && this.captured.includes("R2C3") === true) ||
+    (this.captured.includes("R3C1") === true && this.captured.includes("R3C2") === true && this.captured.includes("R3C3") === true) ||
+    (this.captured.includes("R1C1") === true && this.captured.includes("R2C1") === true && this.captured.includes("R3C1") === true) ||
+    (this.captured.includes("R1C2") === true && this.captured.includes("R2C2") === true && this.captured.includes("R3C2") === true) ||
+    (this.captured.includes("R1C3") === true && this.captured.includes("R2C3") === true && this.captured.includes("R3C3") === true) ||
+    (this.captured.includes("R1C1") === true && this.captured.includes("R2C2") === true && this.captured.includes("R3C3") === true) ||
+    (this.captured.includes("R3C1") === true && this.captured.includes("R2C2") === true && this.captured.includes("R1C3") === true)) {
     $("button").hide();
     $(".container").fadeOut(4500);
     if (index === 1) {
@@ -99,41 +29,43 @@ Player.prototype.checkForWinner = function(length,index){
   }
 }
 
-// Player.prototype.checkForDraw = function() {
-// }
-
 //UI LOGIC
 $(document).ready(function() {
 
   // $(vs user button).click(function(){
     var playerOne = new Player();
-    var playerTwo = new Player();
+    var cpuTicTacToe = new Player();
     var boxesChecked = new Player();
 
+    var availableSquares = ["R1C1", "R1C2", "R1C3", "R2C1", "R2C2", "R2C3", "R3C1", "R3C2", "R3C3"];
+    var availableSquaresLocation = ["#R1C1", "#R1C2", "#R1C3", "#R2C1", "#R2C2", "#R2C3", "#R3C1", "#R3C2", "#R3C3"];
     var index = 1;
 
+    //Player clicks square
     $("button").on("click", function(){
+      $(this).parent().addClass('X');
+      $(this).hide();
+      var playerOnePosition = $(this).val();
+      playerOne.captured.push(playerOnePosition);
+      boxesChecked.captured.push(playerOnePosition);
+      availableSquares.splice(availableSquares.indexOf(playerOnePosition), 1);
+      availableSquares.splice(availableSquaresLocation.indexOf(playerOnePosition), 1);
+      playerOne.checkForWinner(boxesChecked.captured.length, index);
+      index = 2;
 
-      if (index === 1) {
-        $(this).parent().addClass('X');
-        $(this).hide();
-        var playerOnePosition = $(this).val();
-        playerOne.captured.push(playerOnePosition);
-        boxesChecked.captured.push(playerOnePosition);
-        playerOne.checkForWinner(boxesChecked.captured.length, index);
-        index = 2;
-      }
-      else if (index === 2) {
-        $(this).parent().addClass('O');
-        $(this).hide();
-        var playerTwoPosition = $(this).val();
-        playerTwo.captured.push(playerTwoPosition);
-        boxesChecked.captured.push(playerTwoPosition);
-        playerTwo.checkForWinner(boxesChecked.captured.length, index);
+      for( var i = 1; i < 2; i += 1) {
+        //CPU selects random number
+        var cpuRandomNumber = Math.floor(Math.random()*availableSquares.length);
+        var cpuPosition = availableSquares.splice(cpuRandomNumber, 1);
+        var cpuSquareLocation = $('#'+cpuPosition);
+
+        // var cpuPositionLocation = availableSquaresLocation.splice(cpuRandomNumber, 1);
+        cpuSquareLocation.parent().addClass('O');
+        cpuSquareLocation.hide();
+        cpuTicTacToe.captured.push(cpuPosition);
+        boxesChecked.captured.push(cpuPosition);
+        cpuTicTacToe.checkForWinner(boxesChecked.captured.length, index);
         index = 1;
-      }
-      // boxesChecked.checkForDraw();
-      console.log(boxesChecked.captured);
+      };
     });
-  // });
 });
